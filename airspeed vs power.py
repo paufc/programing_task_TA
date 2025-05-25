@@ -9,7 +9,7 @@ while i < 300:
     b = 0.019+0.11*a**2
     c = a/b
     power = 50031*i/c
-    if 593122<i<593130:
+    if 590000<power<600000:
         x = i
         y = power
     Vy.append(power)
