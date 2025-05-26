@@ -46,5 +46,5 @@ cruise_AirDensity = density/3 # [kg/m^3]
 partialDensityAtCR = cruise_AirDensity/density
 cruise_temperature = 221.75 #  [K]
 
-A = 0.5 * airDensityAtSL * S * CD0
-B = 2 * k / (airDensityAtSL * S)
+A = 0.5 * density * S * CD0
+B = 2 * k / (density * S)
