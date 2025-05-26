@@ -24,10 +24,10 @@ while i < 300:
     power = W*i/c
     minimumrequiredpower = ((2**(1/2))*(W**(3/2)))/(((p*S)**(1/2))*minimumdrag)
     minimumrequiredPoverV = W / maxefficiency
-    if minimumrequiredpower-10<power<minimumrequiredpower+10:
+    if minimumrequiredpower-100<power<minimumrequiredpower+100:
         xendurance = i
         yendurance = power
-    if minimumrequiredPoverV-10< power/i<minimumrequiredPoverV+10:
+    if minimumrequiredPoverV-100< power/i<minimumrequiredPoverV+100:
         xrange = i
         yrange = power
     Vy.append(power)
