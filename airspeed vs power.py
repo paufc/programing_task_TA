@@ -1,23 +1,42 @@
 import matplotlib.pyplot as plt
-
+p = 1.225/3
+psl =1.225
+S = 27
+m = 5100
+mfuel = 1020
+W = m*9.81
+Cdo = 0.019
+k = 0.11
+v = 40
+X = (2*W)/(p*S)
 i = 40
+Clendurance = (3*Cdo/k)**(1/2)
+Cdendurance = Cdo + k*(Clendurance**2)
+minimumdrag = ((Clendurance)**(3/2))/Cdendurance
+maxefficiency = 1/(2*((Cdo*k)**(1/2)))
 Vx = []
 Vy = []
 while i < 300:
     Vx.append(i)
-    a = 9075/i**2
-    b = 0.019+0.11*a**2
+    a = X/(i**2)
+    b = Cdo+k*a**2
     c = a/b
-    power = 50031*i/c
-    if 590000<power<600000:
-        x = i
-        y = power
+    power = W*i/c
+    minimumrequiredpower = ((2**(1/2))*(W**(3/2)))/(((p*S)**(1/2))*minimumdrag)
+    minimumrequiredPoverV = W / maxefficiency
+    if minimumrequiredpower-10<power<minimumrequiredpower+10:
+        xendurance = i
+        yendurance = power
+    if minimumrequiredPoverV-10< power/i<minimumrequiredPoverV+10:
+        xrange = i
+        yrange = power
     Vy.append(power)
     i = i + 1
-
 plt.plot(Vx,Vy)
-plt.scatter(x, y, color='red', s=50)
-plt.title("plot of the airspeed vs the required thrust")
+plt.scatter(xendurance, yendurance, color='red', s=50, label = 'maximum endurance')
+plt.scatter(xrange, yrange, color='green', s=50, label = 'maximum range')
+plt.legend()
+plt.title("plot of the airspeed vs the required power")
 plt.xlabel("airspeed")
 plt.ylabel("required power")
 plt.show()
