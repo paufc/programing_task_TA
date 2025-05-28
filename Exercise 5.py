@@ -26,10 +26,13 @@ for angle in ANGLEs:
         best_speed=airspeeds[i]
 
     i=i+1
+
 print(best_speed)
 print(best_angle)
+
 best_angle=np.radians(best_angle)
 liftTOdrag=1/-np.tan(best_angle)
+
 print(liftTOdrag)
 
 

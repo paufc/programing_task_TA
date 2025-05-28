@@ -33,6 +33,7 @@ while i<len(RODs): #trobar glide time max
         max_speed=airspeeds[i]
     i=i+1
 print(best_speed)
+print(best_ROD)
 
 plt.plot(airspeeds,RODs)
 plt.grid()
@@ -43,3 +44,6 @@ plt.scatter(best_speed, best_ROD, color='red', label='Maximimum glide distance')
 plt.scatter(max_speed, max_value, color='green', label='Maximum glide time')
 plt.legend()
 plt.show()
+
+print(max_speed)
+print(max_value)
