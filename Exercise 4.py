@@ -4,8 +4,8 @@ import numpy as np
 
 def foundROD(airspeed):
     global m, g, A, B
-    requiredThrust=(A*partialDensityAtCR*airspeed**2)+((B*(m*g)**2)/(airspeed**2*partialDensityAtCR))
-    ROD=-(requiredThrust*airspeed)/(m*g)
+    requiredThrustAMBspeed=(A*partialDensityAtCR*airspeed**2)+((B*(m*g)**2)/(airspeed**2*partialDensityAtCR))
+    ROD=-(requiredThrustAMBspeed*airspeed)/(m*g)
     return ROD
 
 airspeeds=range(75,250,1)
