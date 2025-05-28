@@ -32,6 +32,7 @@ while i<len(RODs): #trobar glide time max
         max_value=RODs[i]
         max_speed=airspeeds[i]
     i=i+1
+print(best_speed)
 
 plt.plot(airspeeds,RODs)
 plt.grid()

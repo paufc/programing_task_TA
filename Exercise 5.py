@@ -19,13 +19,19 @@ airspeeds = range(75, 250, 1)
 ANGLEs = [foundGlideAngle(v) for v in airspeeds]
 
 best_angle=ANGLEs[0]
-
+i=0
 for angle in ANGLEs:
     if best_angle<angle:
         best_angle=angle
+        best_speed=airspeeds[i]
+
+    i=i+1
+print(best_speed)
+print(best_angle)
 best_angle=np.radians(best_angle)
 liftTOdrag=1/-np.tan(best_angle)
 print(liftTOdrag)
+
 
 plt.plot(airspeeds, ANGLEs)
 plt.grid()
