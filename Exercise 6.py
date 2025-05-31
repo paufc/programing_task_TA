@@ -12,6 +12,7 @@ v=25/1.944
 airspeed=148+v
 AOC=np.degrees(np.arcsin((a-(A*partialDensityAtCR*airspeed**2)+((B*(m*g)**2)/(airspeed**2*partialDensityAtCR)))/(m*g)))
 print("max aoc,",AOC)
+
 airspeed=148-v
 AOC=np.degrees(np.arcsin((a-(A*partialDensityAtCR*airspeed**2)+((B*(m*g)**2)/(airspeed**2*partialDensityAtCR)))/(m*g)))
 print("max aoc,",AOC)
